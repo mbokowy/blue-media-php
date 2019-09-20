@@ -1,0 +1,77 @@
+{
+    "name": "mbokowy/blue-media-php",
+    "type": "library",
+    "description": "System Płatności Online Blue Media | Online Payment System Blue Media",
+    "keywords": [
+        "transakcje",
+        "transactions",
+        "płatności",
+        "payment",
+        "payments",
+        "pbl",
+        "pbc",
+        "pay by link",
+        "karta",
+        "card",
+        "credit card",
+        "debit card",
+        "karty",
+        "mastercard",
+        "visa",
+        "przelew",
+        "przelewy",
+        "szybki przelew",
+        "szybkie przelewy",
+        "blue cash",
+        "bluecash"
+    ],
+    "homepage": "https://platnosci.bm.pl/",
+    "license": "GPL-3.0-only",
+    "version": "1.0.0",
+    "config": {
+        "discard-changes": true,
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=7.0",
+        "ext-xmlwriter": "*",
+        "ext-xmlreader": "*",
+        "ext-mbstring": "*",
+        "ext-hash": "*",
+        "ext-simplexml": "*",
+        "ext-zip": "*",
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/polyfill": "^1.11",
+        "psr/log": "^1.1"
+    },
+    "require-dev": {
+        "ext-json": "*",
+        "symfony/var-dumper": "^4.2",
+        "codeception/codeception": "^3.0",
+        "codeception/aspect-mock": "^3.0",
+        "league/factory-muffin": "^3.0",
+        "league/factory-muffin-faker": "^2.1",
+        "squizlabs/php_codesniffer": "3.4"
+    },
+    "provide": {
+        "psr/log-implementation": "1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BlueMedia\\OnlinePayments\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BlueMedia\\OnlinePayments\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "build_prod": "composer install --no-ansi --no-dev --no-interaction --no-progress --no-scripts --optimize-autoloader",
+        "lint": "phpcs src/ tests/",
+        "test": "codecept run",
+        "coverage": "codecept run --coverage --coverage-html --coverage-xml"
+    }
+}

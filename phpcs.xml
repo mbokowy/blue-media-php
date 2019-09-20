@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="custom"
+    xsi:noNamespaceSchemaLocation="https://github.com/squizlabs/PHP_CodeSniffer/raw/master/phpcs.xsd">
+    <rule ref="PSR2"/>
+
+    <exclude-pattern>/tests/_output</exclude-pattern>
+
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="180"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+</ruleset>
