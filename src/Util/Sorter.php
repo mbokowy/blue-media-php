@@ -33,7 +33,6 @@ class Sorter
             'ValidityTime',
             'LinkValidityTime',
             'receiverNRB',
-            'receiverName',
             'receiverAddress',
             'remoteID',
             'bankHref',
