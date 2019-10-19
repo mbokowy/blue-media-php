@@ -297,9 +297,9 @@ class Gateway
         self::$httpClient       = new HttpClient();
     }
 
-	/**
-	 * @return SimpleXMLElement|string
-	 */
+    /**
+     * @return string
+     */
     public static function getItnInXml()
     {
         if (empty($_POST['transactions'])) {
@@ -311,7 +311,7 @@ class Gateway
                 ]
             );
 
-            return null;
+            return '';
         }
 
         $transactionXml  = $_POST['transactions'];
@@ -330,10 +330,6 @@ class Gateway
     public static function doItnIn()
     {
         $transactionXml = self::getItnInXml();
-
-        if ($transactionXml === null) {
-        	return null;
-        }
 
         Logger::log(
             Logger::DEBUG,
@@ -554,7 +550,7 @@ class Gateway
                 continue;
             }
             if (is_array($value)) {
-                $value = array_filter($value, 'mb_strlen');
+//                $value = array_filter($value, 'mb_strlen');
                 $value = implode(self::$hashingSeparator, $value);
             }
             if (!empty($value)) {
