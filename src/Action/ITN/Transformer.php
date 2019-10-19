@@ -151,7 +151,7 @@ class Transformer
             $result['verificationStatus'] = $model->getVerificationStatus();
         }
         if ($model->getStartAmount()) {
-            $result['startAmount'] = $model->getStartAmount();
+            $result['startAmount'] = number_format($model->getStartAmount(), 2, '.', '');
         }
         if ($model->getTransferDate()) {
             $result['transferDate'] = (($model->getTransferDate() instanceof DateTime) ?
