@@ -331,6 +331,10 @@ class Gateway
     {
         $transactionXml = self::getItnInXml();
 
+	    if ($transactionXml === null) {
+		    return null;
+	    }
+
         Logger::log(
             Logger::DEBUG,
             sprintf('Got "transactions" field in POST data'),
