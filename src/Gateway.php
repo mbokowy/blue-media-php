@@ -297,9 +297,9 @@ class Gateway
         self::$httpClient       = new HttpClient();
     }
 
-    /**
-     * @return string
-     */
+	/**
+	 * @return SimpleXMLElement|string
+	 */
     public static function getItnInXml()
     {
         if (empty($_POST['transactions'])) {
@@ -311,7 +311,7 @@ class Gateway
                 ]
             );
 
-            return '';
+            return null;
         }
 
         $transactionXml  = $_POST['transactions'];
