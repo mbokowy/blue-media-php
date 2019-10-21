@@ -14,9 +14,6 @@ class Formatter
      */
     public static function formatAmount($amount): string
     {
-        $amount = str_replace([',', ' '], '', $amount);
-        $amount = number_format((float)$amount, 2, '.', '');
-
         return $amount;
     }
 

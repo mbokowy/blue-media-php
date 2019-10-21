@@ -161,8 +161,6 @@ class TransactionInit extends AbstractModel
      */
     public function setAmount($amount): self
     {
-        $amount = (float)Formatter::formatAmount($amount);
-        Validator::validateAmount($amount);
         $this->amount = (float)$amount;
 
         return $this;
@@ -175,7 +173,7 @@ class TransactionInit extends AbstractModel
      */
     public function getAmount(): string
     {
-        return Formatter::formatAmount($this->amount);
+        return $this->amount;
     }
 
     /**
