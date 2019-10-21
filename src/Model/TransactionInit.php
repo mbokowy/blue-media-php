@@ -173,7 +173,7 @@ class TransactionInit extends AbstractModel
      */
     public function getAmount(): string
     {
-        return $this->amount;
+        return Formatter::formatAmount($this->amount);
     }
 
     /**

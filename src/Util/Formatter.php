@@ -14,7 +14,7 @@ class Formatter
      */
     public static function formatAmount($amount): string
     {
-        return $amount;
+        return number_format((float)$amount, 2, '.', '');
     }
 
     /**
