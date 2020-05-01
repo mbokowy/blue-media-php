@@ -690,9 +690,9 @@ class ItnIn extends AbstractModel
     /**
      * Returns gatewayId.
      *
-     * @return int
+     * @return int|null
      */
-    public function getGatewayId(): int
+    public function getGatewayId(): ?int
     {
         return $this->gatewayId;
     }
