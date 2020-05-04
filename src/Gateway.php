@@ -28,6 +28,7 @@ class Gateway
 
     const PAYMENT_ACTON_PAYMENT = '/payment';
     const PAYMENT_ACTON_PAYWAY_LIST = '/paywayList';
+    const REGULATIONS_ACTION_GET = '/webapi/regulationsGet';
 
     const STATUS_CONFIRMED = 'CONFIRMED';
     const STATUS_NOT_CONFIRMED = 'NOTCONFIRMED';
@@ -525,6 +526,7 @@ class Gateway
         switch ($action) {
             case self::PAYMENT_ACTON_PAYMENT:
             case self::PAYMENT_ACTON_PAYWAY_LIST:
+            case self::REGULATIONS_ACTION_GET:
                 break;
 
             default:
@@ -604,14 +606,14 @@ class Gateway
 	 */
 	final public function getRegulation(): array
 	{
-		$fields         = [
+		$fields = [
 			'ServiceID' => self::$serviceId,
 			'MessageID' => $this->generateMessageId(),
 		];
 		$fields['Hash'] = self::generateHash($fields);
 
 		$responseObject = self::$httpClient->post(
-			self::getActionUrl('/webapi/regulationsGet'),
+			self::getActionUrl(self::REGULATIONS_ACTION_GET),
 			[],
 			$fields
 		);
