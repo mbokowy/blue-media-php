@@ -464,11 +464,14 @@ class TransactionInit extends AbstractModel
 	}
 
 	/**
-	 * @param string $regulationId
+	 * @param $regulationId
+	 * @return $this
 	 */
-	public function setRegulationId(string $regulationId)
+	public function setRegulationId($regulationId)
 	{
 		$this->regulationId = $regulationId;
+
+		return $this;
 	}
 
     /**
