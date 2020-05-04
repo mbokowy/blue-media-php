@@ -112,6 +112,11 @@ class TransactionInit extends AbstractModel
      */
     protected $screenType = '';
 
+	/**
+	 * @var string
+	 */
+    protected $regulationId = '';
+
     /**
      * @return string
      */
@@ -450,6 +455,22 @@ class TransactionInit extends AbstractModel
         return $this->validityTime;
     }
 
+	/**
+	 * @return string
+	 */
+	public function getRegulationId(): string
+	{
+		return $this->regulationId;
+	}
+
+	/**
+	 * @param string $regulationId
+	 */
+	public function setRegulationId(string $regulationId)
+	{
+		$this->regulationId = $regulationId;
+	}
+
     /**
      * Validates model.
      *
@@ -513,6 +534,11 @@ class TransactionInit extends AbstractModel
 
         if (!empty($this->getScreenType())) {
             $result['ScreenType'] = $this->getScreenType();
+        }
+
+        if (!empty($this->getRegulationId())) {
+	        $result['DefaultRegulationAcceptanceState'] = 'ACCEPTED';
+	        $result['DefaultRegulationAcceptanceID'] = $this->getRegulationId();
         }
 
         $result['Hash'] = $this->getHash();

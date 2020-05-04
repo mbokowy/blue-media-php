@@ -38,6 +38,8 @@ class Sorter
             'bankHref',
             'AuthorizationCode',
             'ScreenType',
+	        'DefaultRegulationAcceptanceState',
+	        'DefaultRegulationAcceptanceID',
             'Hash',
         ];
 

@@ -599,6 +599,34 @@ class Gateway
         return $model;
     }
 
+	/**
+	 * @return array
+	 */
+	final public function getRegulation(): array
+	{
+		$fields         = [
+			'ServiceID' => self::$serviceId,
+			'MessageID' => $this->generateMessageId(),
+		];
+		$fields['Hash'] = self::generateHash($fields);
+
+		$responseObject = self::$httpClient->post(
+			self::getActionUrl('/webapi/regulationsGet'),
+			[],
+			$fields
+		);
+
+		$this->response = (string)$responseObject->getBody();
+		$this->isErrorResponse();
+
+		$responseParsed = XMLParser::parse($this->response);
+
+		return [
+			'id' => (int)$responseParsed->regulations->regulation->regulationID,
+			'url' => (string)$responseParsed->regulations->regulation->url,
+		];
+	}
+
     /**
      * Generates unique MessageId.
      *
