@@ -313,6 +313,7 @@ class Transformer
                 case ItnIn::PAYMENT_STATUS_DETAILS_CANCELLED:
                 case ItnIn::PAYMENT_STATUS_DETAILS_ANOTHER_ERROR:
                 case ItnIn::PAYMENT_STATUS_DETAILS_REJECTED_BY_USER:
+                case ItnIn::PAYMENT_STATUS_ERROR_TX_NOT_FOUND:
                     $model->setPaymentStatusDetails((string)$transaction->paymentStatusDetails);
                     break;
 
