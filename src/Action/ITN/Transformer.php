@@ -316,7 +316,6 @@ class Transformer
                 case ItnIn::PAYMENT_STATUS_ERROR_TX_NOT_FOUND:
                     $model->setPaymentStatusDetails((string)$transaction->paymentStatusDetails);
                     break;
-
                 default:
                     break;
             }
