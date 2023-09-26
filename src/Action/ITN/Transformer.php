@@ -318,11 +318,6 @@ class Transformer
                     break;
 
                 default:
-                    Logger::log(
-                        Logger::EMERGENCY,
-                        sprintf('Not supported paymentStatusDetails="%s"', (string)$transaction->paymentStatusDetails),
-                        ['itn' => $xml]
-                    );
                     break;
             }
         }
