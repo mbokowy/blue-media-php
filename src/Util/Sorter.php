@@ -27,6 +27,7 @@ class Sorter
             'CustomerIP',
             'Title',
             'ReceiverName',
+            'Products',
             'BlikUIDKey',
             'BlikUIDLabel',
             'BlikAMKey',

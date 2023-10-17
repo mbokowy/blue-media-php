@@ -27,7 +27,7 @@
     ],
     "homepage": "https://platnosci.bm.pl/",
     "license": "GPL-3.0-only",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "config": {
         "discard-changes": true,
         "sort-packages": true
