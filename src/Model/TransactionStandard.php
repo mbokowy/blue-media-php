@@ -51,6 +51,8 @@ class TransactionStandard extends TransactionInit
      */
     protected $blikAMKey = '';
 
+    protected $returnUrl = '';
+
     /**
      * Set customerNrb.
      *
@@ -187,6 +189,22 @@ class TransactionStandard extends TransactionInit
     }
 
     /**
+     * @return string
+     */
+    public function getReturnUrl(): string
+    {
+        return $this->returnUrl;
+    }
+
+    /**
+     * @param string $returnUrl
+     */
+    public function setReturnUrl(string $returnUrl): void
+    {
+        $this->returnUrl = $returnUrl;
+    }
+
+    /**
      * Return object data as array.
      *
      * @return array
@@ -225,6 +243,10 @@ class TransactionStandard extends TransactionInit
 
         if ($this->getLinkValidityTime() instanceof DateTime) {
             $result['LinkValidityTime'] = $this->getLinkValidityTime()->format('Y-m-d H:i:s');
+        }
+
+        if (!empty($this->getReturnUrl())) {
+            $result['ReturnURL'] = $this->getReturnUrl();
         }
 
         return Sorter::sortTransactionParams($result);

@@ -31,6 +31,7 @@ class Sorter
             'BlikUIDKey',
             'BlikUIDLabel',
             'BlikAMKey',
+            'ReturnURL',
             'ValidityTime',
             'LinkValidityTime',
             'receiverNRB',
@@ -54,7 +55,7 @@ class Sorter
                 $result[$paramName] = $lowercaseKeysParams[$lowercaseParamName];
             }
         }
-
+        
         return $result;
     }
 }
