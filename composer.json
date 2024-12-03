@@ -27,7 +27,7 @@
     ],
     "homepage": "https://platnosci.bm.pl/",
     "license": "GPL-3.0-only",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "config": {
         "discard-changes": true,
         "sort-packages": true
@@ -46,7 +46,7 @@
     },
     "require-dev": {
         "ext-json": "*",
-        "symfony/var-dumper": "^4.2",
+        "symfony/var-dumper": "^6.4|^7.0",
         "codeception/codeception": "^3.0",
         "codeception/aspect-mock": "^3.0",
         "league/factory-muffin": "^3.0",
